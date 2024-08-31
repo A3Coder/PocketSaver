@@ -1,0 +1,32 @@
+<% include('../layouts/header.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+  <h1>Verification</h1>
+
+ <%
+ if(typeof message !=='undefined'){
+
+    %>
+      <h4 class="message"><%= message %></h4>
+    <%
+ }
+%>
+<form action="" method="post">
+    <input type="email" name="email" required placeholder="Enter email">
+    <br><br>
+    
+    <button type="submit" value="Send Verification Link">Send Verification Link</button>
+  </div>
+</form>
+</body>
+</html>
+
+<% include('../layouts/footer.ejs')%>

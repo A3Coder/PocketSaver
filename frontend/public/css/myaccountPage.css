@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+
+/*Default Full Body CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    overflow-x: hidden;
+}
+
+/*Section 1 Styling*/
+.section_1 {
+    max-width: 100vw;
+}
+
+.section_1 .section_1_container {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-image: url("../Assets/HomePage/section BG.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.section_1 .section_1_container .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    padding: 0 200px;
+}
+
+.section_1 .section_1_container .overlay p {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 300;
+    color: white;
+
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section_1 .section_1_container .overlay p span {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+}
+
+/*Section 1 End*/
+
+/*Section 2 Style Start*/
+.section_2 {
+    width: 100vw;
+    height: calc(100vh - 420px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Section 2 Style End*/
+
+/*My Account Page Style Start*/
+.myaccount_container {
+    position: absolute;
+    top: 275px;
+
+    width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myaccount_container .heading {
+    width: 100%;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.myaccount_container .heading i {
+    font-size: 20px;
+}
+
+.myaccount_container .heading h2 {
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.myaccount_container .heading a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.myaccount_container .heading a:hover {
+    background-color: white;
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.myaccount_container .account_information {
+    width: 100%;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myaccount_container .account_information .avatarLogo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    font-size: 40px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myaccount_container .account_information .avatar_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.myaccount_container .account_information .avatar_container h2 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin-bottom: 5px;
+}
+
+.myaccount_container .account_information .avatar_container p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+
+.myaccount_container .form_container {
+    width: 100%;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.myaccount_container .form_container .list {
+    list-style: none;
+    line-height: 2.0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.myaccount_container .form_container .list .options {
+    width: 110%;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+
+    transition: 0.3s ease;
+}
+
+.myaccount_container .form_container .list .options:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.myaccount_container .form_container .list .options::after {
+    content: '>';
+    position: absolute;
+    right: 10px;
+}
+
+.myaccount_container .form_container .list .options:hover {
+    margin-left: 20px;
+    text-decoration: underline;
+    background-color: white;
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.myaccount_container .form_container .options_container {
+    width: 100%;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myaccount_container .form_container .options_container .row {
+    width: 100%;
+    padding: 10px;
+    border: 1px dashed black;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.myaccount_container .form_container .options_container .row:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.myaccount_container .form_container .options_container button {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.myaccount_container .form_container .options_container button:hover {
+    background-color: white;
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.myaccount_container .form_container .options_container .row label {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin-bottom: 5px;
+}
+
+.myaccount_container .form_container .options_container .row input {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    border: none;
+
+}
+
+.myaccount_container .footing {
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.myaccount_container .footing a {
+    letter-spacing: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.myaccount_container .footing a:hover {
+    text-decoration: underline;
+}
+
+/*My Account Page Style End*/
+
+/*Responsive Style Start*/
+@media (min-width: 200px) and (max-width: 500px) {
+
+    /*Section 1 Styling*/
+    .section_1 {
+        width: 100vw;
+    }
+
+    .section_1 .section_1_container {
+        height: 275px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        background-image: url("../Assets/HomePage/section BG.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .section_1 .section_1_container .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0 5px;
+    }
+
+    .section_1 .section_1_container .overlay p {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 300;
+        color: white;
+
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .section_1 .section_1_container .overlay p span {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
+        text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /*Section 1 End*/
+
+    /*Section 2 Style Start*/
+    .section_2 {
+        width: 100vw;
+        height: calc(100vh - 400px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Section 2 Style End*/
+
+    /*My Account Page Style Start*/
+    .myaccount_container {
+        position: absolute;
+        top: 225px;
+
+        width: 95%;
+    }
+
+    .myaccount_container .heading {
+        width: 100%;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .myaccount_container .heading i {
+        font-size: 20px;
+    }
+
+    .myaccount_container .heading h2 {
+        font-size: 25px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        text-align: center;
+
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .myaccount_container .heading a {
+        width: 100%;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .myaccount_container .heading a:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+
+    .myaccount_container .account_information {
+        width: 100%;
+        padding: 10px 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .myaccount_container .account_information .avatarLogo {
+        width: 75px;
+        height: 75px;
+        margin-right: 10px;
+        font-size: 25px;
+        font-weight: 400;
+    }
+
+    .myaccount_container .account_information .avatar_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .myaccount_container .account_information .avatar_container h2 {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        margin-bottom: 3px;
+    }
+
+    .myaccount_container .account_information .avatar_container p {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .myaccount_container .form_container {
+        width: 100%;
+        padding: 10px 3px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .myaccount_container .form_container .list {
+        width: 75%;
+        list-style: none;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .myaccount_container .form_container .list .options {
+        width: 110%;
+        padding: 5px 10px;
+        position: relative;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+
+        transition: 0.3s ease;
+        
+        margin-left: -8px;
+    }
+
+    .myaccount_container .form_container .list .options:not(:last-child) {
+        margin-bottom: 7px;
+    }
+
+    .myaccount_container .form_container .list .options::after {
+        content: '>';
+        position: absolute;
+        right: 6px;
+    }
+
+    .myaccount_container .form_container .list .options:hover {
+        margin-left: 5px;
+        text-decoration: underline;
+        background-color: white;
+        color: black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    .myaccount_container .form_container .options_container {
+        margin-top: 15px;
+        width: 100%;
+        padding: 0px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .myaccount_container .form_container .options_container .row {
+        width: 100%;
+        padding: 10px;
+        border: 1px dashed black;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .myaccount_container .form_container .options_container .row:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    /*My Account Page Style End*/
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+
+    /*Section 1 Styling*/
+    .section_1 {
+        width: 100vw;
+    }
+
+    .section_1 .section_1_container {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        background-image: url("../Assets/HomePage/section BG.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .section_1 .section_1_container .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0 30px;
+    }
+
+    .section_1 .section_1_container .overlay p {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 300;
+        color: white;
+
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .section_1 .section_1_container .overlay p span {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /*Section 1 End*/
+
+    /*Section 2 Style Start*/
+    .section_2 {
+        width: 100vw;
+        height: calc(100vh - 400px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Section 2 Style End*/
+
+    /*My Account Page Style Start*/
+    .myaccount_container {
+        position: absolute;
+        top: 275px;
+
+        width: 95%;
+    }
+
+    .myaccount_container .heading {
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .myaccount_container .heading i {
+        font-size: 20px;
+    }
+
+    .myaccount_container .heading h2 {
+        font-size: 25px;
+        font-weight: 400;
+        letter-spacing: 0px;
+    }
+
+    .myaccount_container .heading a {
+        font-size: 16px;
+    }
+
+    /*My Account Page Style End*/
+}
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+
+    /*Section 1 Styling*/
+    .section_1 {
+        width: 100vw;
+    }
+
+    .section_1 .section_1_container {
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        background-image: url("../Assets/HomePage/section BG.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .section_1 .section_1_container .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0 150px;
+    }
+
+    .section_1 .section_1_container .overlay p {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 300;
+        color: white;
+
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .section_1 .section_1_container .overlay p span {
+        text-align: center;
+        font-size: 45px;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /*Section 1 End*/
+
+    /*Section 2 Style Start*/
+    .section_2 {
+        width: 100vw;
+        height: calc(100vh - 420px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Section 2 Style End*/
+
+    /*My Account Page Style Start*/
+    .myaccount_container {
+        position: absolute;
+        top: 275px;
+
+        width: 650px;
+    }
+
+    .myaccount_container .heading {
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .myaccount_container .heading i {
+        font-size: 20px;
+    }
+
+    .myaccount_container .heading h2 {
+        font-size: 25px;
+        font-weight: 400;
+        letter-spacing: 0px;
+    }
+
+    .myaccount_container .heading a {
+        font-size: 16px;
+    }
+
+    /*My Account Page Style End*/
+}

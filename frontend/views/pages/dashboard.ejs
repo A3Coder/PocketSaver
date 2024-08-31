@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/Logo.png"> <!--Title Icon Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--Font Awesome Link-->
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/dashboardResponsive.css">
+    <link rel="stylesheet" href="/css/photo.css">
+    <title>PocketSaver - Dashboard</title>
+</head>
+
+<body>
+    <header class="dashboard_header">
+        <div class="container">
+            <div class="toolbar_container">
+                <div class="icon"><i class="fa-solid fa-wallet"></i></div>
+                <div class="content">
+                    <span class="name" id="headerbudgetName"></span>
+                    <span class="amount" id="headerbudgetAmount"></span>
+                </div>
+                <div id="editWallet" class="headerIcons"><i class="fa-solid fa-pen-to-square"></i></div>
+                <div id="dltWallet" class="headerIcons"><i class="fa-solid fa-trash"></i></div>
+            </div>
+            <div class="menu_container">
+                <!-- <button title="Go to Today"><i class="fa-regular fa-calendar"></i></button>
+                <button title="Sort by Months"><i class="fa-solid fa-eye"></i></button> -->
+                <button class="moneyBTN" id="moneyBTN">ADD MONEY</button>
+                <button class="transactionbtn" id="transactionBTN">ADD TRANSACTION</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <div class="list_items">
+            <div class="item 0" id="sidemenubarBTN">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <a href="">
+                <div class="item 1 active">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Transactions</span>
+                </div>
+            </a>
+            <a href="/reportPage">
+                <div class="item 2">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Report</span>
+                </div>
+            </a>
+            <!-- <div class="item 3">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <span>Budget</span>
+            </div> -->
+
+            <div class="straightLine"></div>
+
+            <a href="/contactUsPage">
+                <div class="item 3">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Contact</span>
+                </div>
+            </a>
+
+            <a href="/faqPage">
+                <div class="item 4">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span>Help</span>
+                </div>
+            </a>
+
+            <button class="moneyBTN" id="sidebarmoneyBTN">+</button>
+            <button class="transactionbtn" id="sidebartransactionBTN">-</button>
+        </div>
+    </div>
+
+    <div class="main_container">
+        <!--Addding First Budget Button Starts Here-->
+        <div class="content_container" id="budgetformBTN">
+            <div class="heading">
+                <h3>Add Your First Wallet</h3>
+            </div>
+
+            <div class="button">
+                <button onclick="showBudgetForm()">Add Wallet</button>
+            </div>
+        </div>
+
+        <div id="overlay2"></div>
+
+        <!--Budget Form Starts Here-->
+        <div class="budget_form" id="budgetForm" style="display: none;">
+            <form action="" class="form_container">
+                <div class="heading">
+                    <h3>Create Your First Wallet</h3>
+                </div>
+                <div class="row 2">
+                    <label for="amount">Enter Amount</label>
+                    <input type="text" placeholder="Intial Amount" id="budgetAmount" name="budgetAmount">
+                </div>
+                <button type="submit" id="addBudget">Create Wallet</button>
+            </form>
+        </div>
+
+        <!--Add Transaction Form Display Starts Here-->
+        <div class="transactionForm_container" style="display: none;">
+            <div class="heading">
+                <p>Add Transaction</p>
+            </div>
+            <div class="main_form">
+                <div class="rows 1">
+                    <div class="cols 1">
+                        <p>Select Category</p>
+                        <div class="selector">
+                            <div class="selectField">
+                                <p id="SelectedCategory">Select Category</p>
+                            </div>
+                            <ul class="list" style="display: none;" id="list">
+                                <li class="option">
+                                    <p>Cancel</p>
+                                </li>
+                                <li class="option">
+                                    <p>Food & Beverage</p>
+                                </li>
+                                <li class="option">
+                                    <p>Transportation</p>
+                                </li>
+                                <li class="option">
+                                    <p>Rentals</p>
+                                </li>
+                                <li class="option">
+                                    <p>Water Bill</p>
+                                </li>
+                                <li class="option">
+                                    <p>Phone Bill</p>
+                                </li>
+                                <li class="option">
+                                    <p>Electricity Bill</p>
+                                </li>
+                                <li class="option">
+                                    <p>Gas Bill</p>
+                                </li>
+                                <li class="option">
+                                    <p>Television Bill</p>
+                                </li>
+                                <li class="option">
+                                    <p>Internet Bill</p>
+                                </li>
+                                <li class="option">
+                                    <p>Home Maintenance</p>
+                                </li>
+                                <li class="option">
+                                    <p>Vehicle Maintenance</p>
+                                </li>
+                                <li class="option">
+                                    <p>Medical Check Up</p>
+                                </li>
+                                <li class="option">
+                                    <p>Insurances</p>
+                                </li>
+                                <li class="option">
+                                    <p>Education</p>
+                                </li>
+                                <li class="option">
+                                    <p>Houseware</p>
+                                </li>
+                                <li class="option">
+                                    <p>Personal Items</p>
+                                </li>
+                                <li class="option">
+                                    <p>Pets</p>
+                                </li>
+                                <li class="option">
+                                    <p>Home Services</p>
+                                </li>
+                                <li class="option">
+                                    <p>Fitness</p>
+                                </li>
+                                <li class="option">
+                                    <p>Makeup</p>
+                                </li>
+                                <li class="option">
+                                    <p>Gifts & Donations</p>
+                                </li>
+                                <li class="option">
+                                    <p>Streaming Services</p>
+                                </li>
+                                <li class="option">
+                                    <p>Investment</p>
+                                </li>
+                                <li class="option">
+                                    <p>Loan Repayment</p>
+                                </li>
+                                <li class="option">
+                                    <p>Pay Interest</p>
+                                </li>
+                                <li class="option">
+                                    <p>Other Expenses</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cols 2">
+                        <p>Amount</p>
+                        <input type="text" value="0" id="transactionAmount">
+                    </div>
+                </div>
+                <div class="rows 2">
+                    <div class="cols 1">
+                        <p>Date</p>
+                        <input type="date" id="date">
+                    </div>
+                    <div class="cols 2">
+                        <p>Notes</p>
+                        <input type="char" placeholder="Add a Note" id="note">
+                    </div>
+                </div>
+            </div>
+            <div class="footing">
+                <button id="cancel">Cancel</button>
+                <button id="addTransaction">Add Transaction</button>
+            </div>
+        </div>
+
+        <!--Add Income Form Display Starts Here-->
+        <div class="incomeForm_container" style="display: none;">
+            <div class="heading">
+                <p>Add Money</p>
+            </div>
+            <div class="main_form">
+                <div class="rows 1">
+                    <div class="cols 1">
+                        <p>Date</p>
+                        <input type="date" id="incomeDate">
+                    </div>
+
+                    <div class="cols 2">
+                        <p>Amount</p>
+                        <input type="text" id="incomeAmount" placeholder="0">
+                    </div>
+
+                    <div class="cols 3">
+                        <p>Notes</p>
+                        <input type="char" placeholder="Add a Note" id="incomeNote">
+                    </div>
+                </div>
+            </div>
+            <div class="footing">
+                <button id="incomeCancel">Cancel</button>
+                <button id="addMoney">Add Money</button>
+            </div>
+        </div>
+
+        <!--Transactions Display Starts Here-->
+        <div class="transaction_container" id="transactionDisplay">
+            <div class="heading" id="budgetHeading">Wallet</div>
+            <div class="main_content">
+                <div class="row 1">
+                    <span>Total Amount</span>
+                    <span id="budget">+&#8377 </span>
+                </div>
+                <div class="row 2">
+                    <span>Total Expenses</span>
+                    <span id="expense">-&#8377 </span>
+                </div>
+                <div class="straightLine"></div>
+                <div class="row 3">
+                    <span>Amount Left</span>
+                    <span id="balance">&#8377 </span>
+                </div>
+            </div>
+            <div class="heading">Expense Details</div>
+            <div class="expense_details">
+                <div class="expense_content" id="expContent">
+                    <!-- <div class="category" id="category">
+                        <div class="category_content">
+                            <h3>Category <span>-&#8377 400</span></h3>
+                            <p>No. of Transactions</p> 
+                        </div>
+                        <div class="transactions">
+                            <h3>01</h3>
+                            <div class="content">
+                                <h4>Date</h4>
+                                <p>Notes</p>
+                            </div>
+                            <span>-&#8377 400</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="heading2" id="showIncome">Income Details</div>
+            <div class="income_details" style="display: none;">
+                <div class="income_content">
+                    <!-- <div class="transactions">
+                        <div class="content">
+                            <h4>Initial Amount</h4>
+                            <p>Extra Incomes are Below:</p>
+                        </div>
+                        <span id="initialAmount">+&#8377 400</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="overlay"></div>
+    <!--Side Menu Bar Starts Here-->
+    <div class="sidemenubar" id="sidemenubar">
+        <div id="closeBTN">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="avatar_container">
+            <div class="name_avatar"><span id="avatarLetter"><img src="<%= user.image %>" alt=""
+                        class="profile-photo"></span></div>
+            <p id="avatar_username">
+                <%= user.name %>
+            </p>
+            <span id="avatar_emailid">
+                <%= user.email %>
+            </span>
+        </div>
+
+        <a href="/myaccountPage">
+            <div class="icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="headings">
+                <span>My Account</span>
+            </div>
+        </a>
+
+        <a href="/walletPage">
+            <div class="icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <div class="headings">
+                <span>My Wallets</span>
+            </div>
+        </a>
+
+        <a href="/categoriesPage">
+            <div class="icon">
+                <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+            <div class="headings">
+                <span>Categories</span>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        const itemsLink = document.querySelectorAll(".item");
+
+        itemsLink.forEach(itemlink => {
+            itemlink.addEventListener('click', () => {
+                document.querySelector('.active')?.classList.remove('active');
+                itemlink.classList.add('active');
+            })
+        })
+
+        const sidemenubarBTN = document.getElementById("sidemenubarBTN")
+        const closeBTN = document.getElementById("closeBTN")
+        const overlay = document.getElementById("overlay")
+
+        sidemenubarBTN.addEventListener('click', () => {
+            document.getElementById("sidemenubar").style.left = "0px";
+            overlay.style.display = "block";
+        })
+
+        closeBTN.addEventListener('click', () => {
+            document.getElementById("sidemenubar").style.left = "-310px";
+            overlay.style.display = "none";
+            itemsLink[0].classList.remove('active');
+            itemsLink[1].classList.add('active');
+        })
+
+        overlay.addEventListener('click', () => {
+            document.getElementById("sidemenubar").style.left = "-310px";
+            overlay.style.display = "none";
+            itemsLink[0].classList.remove('active');
+            itemsLink[1].classList.add('active');
+        })
+    </script>
+    <script src="JS/dashboardHeader.js"></script>
+    <script src="JS/budgetForm.js"></script>
+    <script src="JS/transactionForm.js"></script>
+    <script src="JS/transactionsDOM.js"></script>
+    <script src="JS/incomeForm.js"></script>
+    <script src="JS/incomeDetails.js"></script>
+</body>
+
+</html>

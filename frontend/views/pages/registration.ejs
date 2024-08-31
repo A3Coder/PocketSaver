@@ -1,0 +1,220 @@
+<% include('../layouts/header.ejs') %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles2.css">
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      .pass-box {
+        position: relative;
+      }
+
+      .fa-solid {
+
+        position: absolute;
+        right: 5px;
+        margin: 5px;
+        margin-top: 230px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h1>Sign-up</h1>
+
+      <% if(typeof message !=='undefined' ){ %>
+      <p class="message">
+        <%= message %>
+      </p>
+      <% } %>
+
+      <form class="pass-box" id="myForm" method="post" action="/sign-up"
+      enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter name"
+          required>
+        <label for="Email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email"
+          required>
+        <label for="Mobile NO.">Mobile No:</label>
+        <input type="text" id="mobile" name="mobile"
+          placeholder="Enter Mobile Number" required>
+        <label for="password">Password:</label>
+        <input type="password" id="passField" name="password"
+          placeholder="Enter password" required>
+        <i class="fa-solid fa-eye-slash" id="eye"></i>
+        <!-- <label for="image">Profile Image</label>
+        <input type="file" id="image" name="image" accept="image/*" required> -->
+        <button type="submit" id="submitButton" value="Register">Sign-up</button>
+      </form>
+      <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+
+    <!-- Strong password validation -->
+
+    <div id="pswd_info" class="hide">
+      <h4 class="text-info">Password must contain:</h4>
+      <ul>
+        <li id="letter" class="invalid"><i class="fa fa-times"
+            aria-hidden="true"></i>At least <strong>one
+            letter</strong></li>
+        <li id="capital" class="invalid"><i class="fa fa-times"
+            aria-hidden="true"></i>At least <strong>one capital
+            letter</strong></li>
+        <li id="number" class="invalid"><i class="fa fa-times"
+            aria-hidden="true"></i>At least <strong>one number
+            letter</strong></li>
+        <li id="length" class="invalid"><i class="fa fa-times"
+            aria-hidden="true"></i>At least <strong>8 characters
+            letter</strong></li>
+        <li id="special" class="invalid"><i class="fa fa-times"
+            aria-hidden="true"></i>At least <strong>one special-character
+            letter</strong></li>
+
+      </ul>
+    </div>
+
+    <!-- Password toggle between showing and hidding code here -->
+    <script>
+      var x = document.getElementById("passField");
+      document.getElementById("eye").addEventListener("click", function () {
+
+        if (x.type == "password") {
+          x.type = "text";
+          this.classList.add("fa-eye");
+          this.classList.remove("fa-eye-slash");
+        } else {
+          x.type = "password";
+          this.classList.remove("fa-eye");
+          this.classList.add("fa-eye-slash");
+        }
+      });
+
+
+      // password validation js start here
+      x.addEventListener("keyup", function () {
+        validate(x.value);
+      });
+
+      x.addEventListener("blur",function(){
+        AddClass("pswd_info","hide");
+      })
+
+      
+      x.addEventListener("focus",function(){
+        RemoveClass("pswd_info","hide");
+      })
+
+
+      function validate(pswd) {
+        if (pswd.length >= 8) {
+
+         valid("length");
+        }
+        else {
+          invalid("length");
+
+        }
+        if(pswd.match(/[A-z]/)){
+         valid("letter");
+        }else{
+         invalid("letter");
+
+        }
+
+        if(pswd.match(/[A-Z]/)){
+          valid("capital");
+
+        }else{
+          invalid("capital");
+        }
+
+        if(pswd.match(/\d/)){
+          valid("number");
+
+        }else{
+          invalid("number");
+        }
+
+        if(pswd.match(/[!@#$%^&*()_+{}\[\]:;<>,.?~]/)){
+          valid("special");
+
+        }else{
+          invalid("special");
+        }
+
+      }
+
+      function valid(id){
+        AddClass(id, "valid");
+          RemoveClass(id, "invalid");
+
+          AddClassOnIcon(id,"fa-check");
+          RemoveClassOnIcon(id,"fa-times");
+      }
+      function invalid(id){
+        AddClass(id, "invalid");
+          RemoveClass(id, "valid");
+          AddClassOnIcon(id,"fa-times");
+          RemoveClassOnIcon(id,"fa-check");
+
+      }
+
+      function AddClass(id, cl) {
+        document.getElementById(id).classList.add(cl);
+      }
+
+      function RemoveClass(id, cl) {
+        document.getElementById(id).classList.remove(cl);
+      }
+
+      function AddClassOnIcon(id, cl) {
+        document.getElementById(id).firstChild.classList.add(cl);
+      }
+
+      function RemoveClassOnIcon(id, cl) {
+        document.getElementById(id).firstChild.classList.remove(cl);
+      }
+
+     
+
+    </script>
+    
+
+  </body>
+ 
+  <script>
+    var submitButton = document.getElementById("submitButton");
+    var x = document.getElementById("passField");
+  
+    submitButton.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+  
+      // Display "Please Wait" message on the button
+      submitButton.innerHTML = "Please Wait...";
+      submitButton.disabled = true; // Disable the button
+  
+      // Simulate a delay before re-enabling the button and submitting the form
+      setTimeout(function() {
+        submitButton.innerHTML = "sign-up";
+        submitButton.disabled = false;
+  
+        // Submit the form
+        document.getElementById("myForm").submit();
+      }, 2000); // Adjust the delay time as needed
+    });
+  </script>
+ </html>
+
+<% include('../layouts/footer.ejs') %>

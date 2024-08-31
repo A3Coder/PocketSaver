@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Wallet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+	<link rel="stylesheet" href="css/walletPage.css">
+</head>
+<body>
+	<header class="header">
+		<nav class="navbar">
+            <a href="/dashboard"><i class="fa-solid fa-arrow-left"></i></a>
+			<h1 class="logo">My Wallet <span id="user_emailId"><%= user.email %></span></h1>
+		</nav>
+	</header>
+    
+    <div class="wallet-container">
+        <div class="wallet-heading">
+            <p>Included in total</p>
+        </div>
+        <div class="wallet-body">
+              <div class="imgBX"><img src="Assets/walletPage/wallet image.jpeg" width="100" height="200"></div>
+            <div class="wallet-money">
+                <h2 id="walletName">Wallet</h2>
+                <p id="walletTotalAmount">+&#8377 870.00</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/walletPage.js"></script>
+</body>
+</html>

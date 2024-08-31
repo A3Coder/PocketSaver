@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+
+/*Default Full Body CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+/*Section 1 Styling*/
+.faq_section_1 {
+    max-width: 100vw;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.faq_section_1 .section_1_container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-image: url("../Assets/FaqPage/section_1 BG.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.faq_section_1 .section_1_container .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    padding: 0 200px;
+}
+
+.faq_section_1 .section_1_container .overlay p {
+    text-align: center;
+    font-size: 75px;
+    font-weight: 300;
+    color: white;
+
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.faq_section_1 .section_1_container .overlay .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.faq_section_1 .section_1_container .overlay .buttons a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: 3px solid rgb(255, 255, 255);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    padding: 15px;
+    transition: 0.3s ease;
+}
+
+.faq_section_1 .section_1_container .overlay .buttons a:hover {
+    background-color: white;
+    border: 3px solid black;
+    color: black;
+    border-radius: 50px;
+}
+
+/*Section 1 End*/
+
+/*Section 2 Style Start*/
+.faq_section_2 {
+    padding: 0 20%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.faq_section_2 .tab {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq_section_2 .tab:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.faq_section_2 .tab input {
+    appearance: none;
+}
+
+.faq_section_2 .tab label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq_section_2 .tab label::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 2em;
+    color: black;
+    transition: transform 1s;
+}
+
+.faq_section_2 .tab:hover label::after {
+    color: #333;
+}
+
+.faq_section_2 .tab input:checked~label::after {
+    transform: rotate(135deg);
+    color: white;
+}
+
+.faq_section_2 .tab label h2 {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.faq_section_2 .tab input:checked~label h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 6em;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.faq_section_2 .tab label h3 {
+    position: relative;
+    font-weight: 500;
+    color: #333;
+    z-index: 10;
+}
+
+.faq_section_2 .tab input:checked~label h3 {
+    background-color: white;
+    padding: 2px 10px;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.faq_section_2 .tab .content {
+    max-height: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.faq_section_2 .tab input:checked~.content {
+    max-height: 100vh;
+}
+
+.faq_section_2 .tab .content p {
+    position: relative;
+    padding: 10px 0;
+    color: #333;
+    z-index: 10;
+    text-align: justify;
+}
+
+.faq_section_2 .tab input:checked~.content p {
+    color: white;
+}
+
+/*Section 2 Style Start*/
+
+/*Responsive Style Start*/
+@media(min-width: 200px) and (max-width: 500px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /*Section 1 Styling*/
+    .faq_section_1 {
+        margin-bottom: 10px;
+    }
+
+    .faq_section_1 .section_1_container {
+        height: 300px;
+    }
+
+    .faq_section_1 .section_1_container .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0 25px;
+    }
+
+    .faq_section_1 .section_1_container .overlay p {
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .faq_section_1 .section_1_container .overlay .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .faq_section_1 .section_1_container .overlay .buttons a {
+        font-size: 20px;
+        font-weight: 400;
+        padding: 12px;
+    }
+    /*Section 1 End*/
+
+    /*Section 2 Style Start*/
+    .faq_section_2 {
+        padding: 0 5%;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .faq_section_2 .tab {
+        position: relative;
+        width: 100%;
+        background-color: white;
+        padding: 0 5px 5px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .faq_section_2 .tab:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    
+    .faq_section_2 .tab input {
+        appearance: none;
+    }
+    
+    .faq_section_2 .tab label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .faq_section_2 .tab label::after {
+        content: '+';
+        position: absolute;
+        right: 20px;
+        font-size: 1.5em;
+        color: black;
+        transition: transform 1s;
+    }
+    
+    .faq_section_2 .tab:hover label::after {
+        color: #333;
+    }
+    
+    .faq_section_2 .tab input:checked~label::after {
+        transform: rotate(135deg);
+        color: white;
+    }
+    
+    .faq_section_2 .tab label h2 {
+        width: 15%;
+        height: 30px;
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        border-radius: 5px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    
+    .faq_section_2 .tab input:checked~label h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 6em;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+    
+    .faq_section_2 .tab label h3 {
+        width: 80%;
+        position: relative;
+        font-weight: 500;
+        color: #333;
+        z-index: 10;
+        font-size: 16px;
+    }
+    
+    .faq_section_2 .tab input:checked~label h3 {
+        background-color: white;
+        padding: 2px 10px;
+        color: black;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .faq_section_2 .tab .content {
+        max-height: 0;
+        transition: 1s;
+        overflow: hidden;
+    }
+    
+    .faq_section_2 .tab input:checked~.content {
+        max-height: 100vh;
+    }
+    
+    .faq_section_2 .tab .content p {
+        position: relative;
+        letter-spacing: 0px;
+        line-height: 25px;
+        padding: 10px 0;
+        color: #333;
+        z-index: 10;
+        text-align: justify;
+    }
+    
+    .faq_section_2 .tab input:checked~.content p {
+        color: white;
+    }
+    /*Section 2 Style Start*/
+}
+
+@media(min-width: 501px) and (max-width: 1000px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /*Section 1 Styling*/
+    .faq_section_1 {
+        margin-bottom: 10px;
+    }
+
+    .faq_section_1 .section_1_container {
+        height: 350px;
+    }
+
+    .faq_section_1 .section_1_container .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0 25px;
+    }
+
+    .faq_section_1 .section_1_container .overlay p {
+        font-size: 40px;
+        font-weight: 400;
+    }
+
+    .faq_section_1 .section_1_container .overlay .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .faq_section_1 .section_1_container .overlay .buttons a {
+        font-size: 25px;
+        font-weight: 400;
+        padding: 15px;
+    }
+    /*Section 1 End*/
+
+    /*Section 2 Style Start*/
+    .faq_section_2 {
+        padding: 0 5%;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .faq_section_2 .tab {
+        position: relative;
+        width: 100%;
+        background-color: white;
+        padding: 0 15px 15px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .faq_section_2 .tab:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    
+    .faq_section_2 .tab input {
+        appearance: none;
+    }
+    
+    .faq_section_2 .tab label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .faq_section_2 .tab label::after {
+        content: '+';
+        position: absolute;
+        right: 20px;
+        font-size: 2em;
+        color: black;
+        transition: transform 1s;
+    }
+    
+    .faq_section_2 .tab:hover label::after {
+        color: #333;
+    }
+    
+    .faq_section_2 .tab input:checked~label::after {
+        transform: rotate(135deg);
+        color: white;
+    }
+    
+    .faq_section_2 .tab label h2 {
+        width: 10%;
+        height: 35px;
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1em;
+        border-radius: 5px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    
+    .faq_section_2 .tab input:checked~label h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 7em;
+        justify-content: flex-end;
+        padding: 15px;
+    }
+    
+    .faq_section_2 .tab label h3 {
+        width: 80%;
+        position: relative;
+        font-weight: 500;
+        color: #333;
+        z-index: 10;
+        font-size: 18px;
+    }
+    
+    .faq_section_2 .tab input:checked~label h3 {
+        background-color: white;
+        padding: 2px 10px;
+        color: black;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .faq_section_2 .tab .content {
+        max-height: 0;
+        transition: 1s;
+        overflow: hidden;
+    }
+    
+    .faq_section_2 .tab input:checked~.content {
+        max-height: 100vh;
+    }
+    
+    .faq_section_2 .tab .content p {
+        position: relative;
+        padding: 10px 0;
+        color: #333;
+        z-index: 10;
+        text-align: justify;
+        line-height: 30px;
+        letter-spacing: 0px;
+        font-size: 20px;
+    }
+    
+    .faq_section_2 .tab input:checked~.content p {
+        color: white;
+    }
+    /*Section 2 Style Start*/
+}
+
+@media(min-width: 1001px) and (max-width: 1500px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /*Section 1 Styling*/
+    .faq_section_1 {
+        margin-bottom: 10px;
+    }
+
+    .faq_section_1 .section_1_container {
+        height: 400px;
+    }
+
+    .faq_section_1 .section_1_container .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0 100px;
+    }
+
+    .faq_section_1 .section_1_container .overlay p {
+        font-size: 55px;
+        font-weight: 300;
+    }
+
+    .faq_section_1 .section_1_container .overlay .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .faq_section_1 .section_1_container .overlay .buttons a {
+        font-size: 25px;
+        font-weight: 400;
+        padding: 20px;
+    }
+    /*Section 1 End*/
+
+    /*Section 2 Style Start*/
+    .faq_section_2 {
+        padding: 0 10%;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    /*Section 2 Style Start*/
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+
+    <link rel="stylesheet" href="CSS/reportPDF.css">
+    <!-- <link rel="stylesheet" href="CSS/reportResponsive.css"> -->
+</head>
+
+<body>
+    <div class="header_container">
+        <h3 class="heading">WALLET REPORT</h3>
+
+        <div class="logo_container">
+            <img src="Assets/Logo.png" alt="">
+            <!-- <p>Ab Paisa Bachana Hua aur Bhi Aasaan</p> -->
+        </div>
+
+        <div class="info_container">
+            <h2 id="username"><%= user.name %></h2>
+            <h4 id="emailId"><%= user.email %></h2>
+                <div class="content">
+                    <h3 id="walletName"></h3>
+                    <p id="initialAmount">Initial Amount: </p>
+                </div>
+        </div>
+    </div>
+
+    <table id="table">
+        <tr>
+            <th>SI. No.</th>
+            <th>Date</th>
+            <th>Expense</th>
+            <th>Income</th>
+            <th>Balance</th>
+        </tr>
+
+        <!-- {{#each wallet}}
+        <tr>
+            <td>{{wallet.key}}</td>
+            <td>{{wallet.date}}</td>
+            <td>Rs. {{wallet.expenses}}</td>
+            <td>{{wallet.income}}</td>
+            <td>Rs. {{wallet.balance}}</td>
+        </tr>
+        {{/each}} -->
+
+    </table>
+
+    <div class="footer_container">
+        <div class="grossAmount">
+            <h2>Initial Amount: <span id="footerInitialAmount">{{wallet.initialAmount}}</span></h2>
+            <h3>Add Income: <span style="color: rgb(16, 231, 16);" id="totalIncome">{{wallet.incomeTotal}}</span></h3>
+        </div>
+        <div class="netAmount">
+            <h2>Gross Amount: <span id="footerGrossAmount">{{grossAmount}}</span></h2>
+            <h3>Less Expenses: <span style="color: rgb(255, 31, 15);" id="totalExpenses">{{wallet.expensesTotal}}</span></h3>
+        </div>
+        <div class="balance">
+            <h2>Balance: <span id="footerBalance">{{wallet.balanceTotal}}</span></h2>
+        </div>
+    </div>
+    <!-- <div class="pages">
+        <span>{{page}}</span>of<span>{{pages}}</span>
+    </div> -->
+
+    <script src="JS/reportPDF.js"></script>
+</body>
+</html>

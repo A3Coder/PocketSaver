@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>contact us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!--Font Awesome Link-->
+  <link rel="icon" href="Assets/Logo.png"> <!--Title Icon Link-->
+  <link rel="stylesheet" href="/css/style.css"> <!--Stylesheet Link-->
+  <link rel="stylesheet" href="/css/footer_style.css"> <!--Footer StyleSheet Link-->
+  <link rel="stylesheet" href="/css/contactUsPage.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto " />
+</head>
+
+<body>
+  <header>
+    <div class="header_container">
+        <div class="Logo"><a href="/home"><img src="Assets/Logo 2.png" alt=""></a></div>
+        <ul class="header_menu">
+            <li><a href="/aboutUsPage" class="active">About Us</a></li>
+            <li><a href="/contactUsPage">Contact Us</a></li>
+        </ul>
+        <!-- <div class="menu">
+            <ul>
+                <li><a href="mainPage.html" class="under">HOME</a></li>
+                <li><a href="#" class="under">SHOP</a></li>
+                <li><a href="#" class="under">OUR PRODUCTS</a></li>
+                <li><a href="#" class="under">CONTACT US</a></li>
+                <li><a href="#" class="under">ABOUT US</a></li>
+            </ul>
+        </div> -->
+        <div class="heading">
+            <ul>
+                <li><a href="/logout">LOGOUT</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+  <div class="container">
+    <form class="contact-form">
+      <h1>Contact Us</h1>
+      <h5>Feel free to contact us if you have any query!</h5>
+      <div class="text">
+        <label>NAME :</label>
+        <input type="text" placeholder="Please Enter Your Name" id="name" name="name" required />
+      </div>
+      <div class="text1">
+        <label>Email :</label>
+        <input type="email" placeholder="Please Enter your Email " id="email" name="email" required />
+      </div>
+      <div class="text2 input-box">
+        <label>SUBJECT :</label>
+        <input type="text" placeholder="Please Enter Your subject" name="subject" required />
+      </div>
+      <div class="text3 input-box">
+        <label>MESSAGE :</label>
+        <!-- <input placeholder="Message" id="msg" name="message" /> -->
+        <textarea name="message" id="msg" cols="30" rows="10" class="message-box"></textarea>
+        <!-- cols="30" -->
+        <!-- rows="7"  -->
+      </div>
+
+      <!-- <div class="button"> -->
+      <button id="send" type="submit">Submit</button>
+      <!-- </div> -->
+    </form>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer_container">
+      <div class="footer_col 1">
+        <div class="heading 1">
+          <h4>About Us</h4>
+        </div>
+        <p>Welcome to Pocketsaver.com, your reliable and intuitive online expense tracker! At Pocketsaver.com, we are
+          passionate about empowering individuals and businesses to take control of their finances and make informed
+          financial decisions. Our goal is to simplify the way you manage your expenses, so you can focus on what truly
+          matters in your life.</p>
+      </div>
+      <div class="footer_col 2">
+        <div class="heading 2">
+          <h4>Information</h4>
+        </div>
+        <ul>
+          <li><a href="/aboutUsPage">About Us</a></li>
+          <li><a href="contactUsPage">Contact Us</a></li>
+          <li><a href="/privacyPolicyPage">Privacy Policy</a></li>
+          <li><a href="">Terms and Conditions</a></li>
+          <li><a href="/faqPage">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer_col 3">
+        <div class="heading 3">
+          <h4>Connect with us</h4>
+        </div>
+        <div class="links">
+          <div class="box 1"><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
+          <div class="box 2"><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+          <div class="box 3"><a href=""><i class="fa-brands fa-twitter"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_copyright">
+      <span>Copyright <i class="fa-regular fa-copyright"></i> 2023 All rights reserved, POCKETSAVER LTD</span>
+    </div>
+  </footer>
+  <script src="/JS/contactUsPage.js"></script>
+</body>
+
+</html>

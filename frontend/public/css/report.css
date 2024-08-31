@@ -1,0 +1,802 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+
+/*Default Full Body CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    /*Z Index --> 14*/
+    background-color: rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(5px);
+    width: 99vw;
+    height: 100vh;
+}
+
+/*For Line Chart Not Enough Data*/
+.line {
+    width: 40%;
+    height: 60%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+/*For Bar Chart Not Enough Data*/
+.bar {
+    width: 40%;
+    height: 60%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+/*Dashboard Header Style Start*/
+.dashboard_header {
+    /*Z Index --> 1*/
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    width: 100vw;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 100px;
+    padding-right: 25px;
+}
+
+.dashboard_header .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard_header .container .toolbar_container {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboard_header .container .toolbar_container .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.dashboard_header .container .toolbar_container .icon i {
+    color: white;
+    font-size: 20px;
+}
+
+.dashboard_header .container .toolbar_container .content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.dashboard_header .container .toolbar_container .content .name {
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+
+.dashboard_header .container .toolbar_container .content .amount {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+.dashboard_header .container .menu_container {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dashboard_header .container .menu_container button {
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.dashboard_header .container .menu_container button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 15px;
+}
+
+.dashboard_header .container .menu_container button i {
+    font-size: 15px;
+}
+
+.dashboard_header .container .menu_container button.transactionbtn {
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    color: white;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.dashboard_header .container .menu_container button.transactionbtn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    color: black;
+}
+
+.dashboard_header .container .menu_container button.moneyBTN {
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    color: white;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.dashboard_header .container .menu_container button.moneyBTN:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    color: black;
+}
+
+/*Dashboard Header Style End*/
+
+/*Dashboard Sidebar Style Start*/
+.sidebar {
+    /*Z Index --> 2*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 95px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .list_items {
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar .list_items .item {
+    width: 100%;
+    height: 65px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.sidebar .list_items .item:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar .list_items .item i {
+    font-size: 25px;
+    text-align: center;
+}
+
+.sidebar .list_items .item span {
+    font-size: 13px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.sidebar .list_items .straightLine {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .list_items .item:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.sidebar .list_items .item.active {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border-left: 3px solid rgba(0, 0, 0, 0.4);
+}
+
+.sidebar .list_items button.transactionbtn {
+    display: none;
+}
+
+.sidebar .list_items button.moneyBTN {
+    display: none;
+}
+
+/*Dashboard Sidebar Style End*/
+
+/*Dashboard Side Menubar Style Start*/
+.sidemenubar {
+    position: absolute;
+    top: 0;
+    left: -310px;
+    z-index: 15;
+    /*Z Index --> 15*/
+
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    transition: 0.5s ease;
+}
+
+.sidemenubar #closeBTN {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.sidemenubar .avatar_container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidemenubar .avatar_container .name_avatar {
+    width: 75px;
+    height: 75px;
+    font-size: 40px;
+    font-weight: 400;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sidemenubar .avatar_container .name_avatar span {
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+}
+
+.sidemenubar .avatar_container p {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.sidemenubar .avatar_container span {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+
+.sidemenubar a {
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    color: black;
+
+    transition: 0.3s ease;
+}
+
+.sidemenubar a .icon {
+    width: 20%;
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidemenubar a .headings {
+    width: 70%;
+    height: 40px;
+    padding: 30px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+    font-size: 17px;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidemenubar a .headings span::after {
+    content: '>';
+    position: absolute;
+    right: 15px;
+    font-weight: 400;
+}
+
+.sidemenubar a:hover {
+    padding-left: 50px;
+}
+
+.sidemenubar button.transactionbtn {
+    display: none;
+}
+
+.sidemenubar button.moneyBTN {
+    display: none;
+}
+
+/*Dashboard Side Menubar Style End*/
+
+/*Main Container Style Start*/
+.report_main_container {
+    position: relative;
+    top: 60px;
+    left: 95px;
+    z-index: 0;
+
+    background-color: rgba(0, 0, 0, 0.05);
+
+    width: calc(100vw - 115px);
+    height: calc(130vh - 60px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Main Container Style End*/
+
+/*Each Row Style Start*/
+.report_main_container .row {
+    width: 95%;
+    height: 25%;
+
+    /* background-color: white;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; */
+}
+
+.report_main_container .row:nth-child(1) {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.report_main_container .row:nth-child(1) .doughNut {
+    width: 70%;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    /* doughNut.style.justifyContent = 'center'
+    doughNut.style.fontSize = '30px'
+    doughNut.style.fontWeight = '500'
+    doughNut.style.letterSpacing = '0px' */
+    /*For Not Enough Data*/
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+
+.report_main_container .row:nth-child(1) .doughNut #doughChart {
+    padding: 5px;
+    width: 100%;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.report_main_container .row:nth-child(1) .doughNut ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.report_main_container .row:nth-child(1) .doughNut ul li {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 10px;
+    text-transform: capitalize;
+    text-align: justify;
+    padding: 5px 10px;
+}
+
+.report_main_container .row:nth-child(1) .doughNut ul li span {
+    font-size: 20px;
+}
+
+.report_main_container .row:nth-child(1) .doughNut img {
+    width: 20%;
+}
+
+/*Info Container Style Start*/
+.report_main_container .row:nth-child(1) .infoContainer {
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer {
+    width: 100%;
+    height: 40%;
+    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo {
+    width: 70%;
+    padding: 0px 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 {
+    font-size: 25px;
+    letter-spacing: 0px;
+    font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 i {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo p {
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 300;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons {
+    width: 20%;
+    height: 100%;
+    padding: 5px;
+    background-color: black;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i:hover {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 25px;
+}
+
+/*Info Container Style End*/
+
+/*ExtraInfo Container Style Start*/
+.report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+    width: 100%;
+    height: 25%;
+    background-color: white;
+
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+    width: 100%;
+    height: 25%;
+    padding: 15px;
+    background-color: white;
+
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer h3 {
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer h3 i.fa-caret-down {
+    color: red;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer h3 i.fa-caret-up {
+    color: green;
+}
+
+.report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer p {
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 300;
+}
+
+/*ExtraInfo Container Style End*/
+
+/*Row 2 Chart Style Start*/
+.report_main_container .row:nth-child(2) {
+    height: 35%;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.report_main_container .row:nth-child(2) canvas {
+    background-color: white;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.report_main_container .row:nth-child(2) .infoContainer {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(2) .infoContainer .heading {
+    width: 100%;
+    height: 30%;
+    padding: 5px;
+    background-color: white;
+
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(2) .infoContainer .heading img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.report_main_container .row:nth-child(2) .infoContainer .heading h3 {
+    font-size: 25px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.report_main_container .row:nth-child(2) .infoContainer .content {
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+    background-color: white;
+
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(2) .infoContainer .content p {
+    font-size: 30px;
+    letter-spacing: 0px;
+    line-height: 40px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.report_main_container .row:nth-child(2) .bar img {
+    width: 20%;
+}
+
+/*Row 2 Chart Style End*/
+
+/*Row 3 Chart Style Start*/
+.report_main_container .row:nth-child(3) {
+    height: 35%;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.report_main_container .row:nth-child(3) canvas {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.report_main_container .row:nth-child(3) .infoContainer {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(3) .infoContainer .heading {
+    width: 100%;
+    height: 30%;
+    padding: 5px;
+    background-color: white;
+
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(3) .infoContainer .heading img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.report_main_container .row:nth-child(3) .infoContainer .heading h3 {
+    font-size: 25px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.report_main_container .row:nth-child(3) .infoContainer .content {
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+    background-color: white;
+
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.report_main_container .row:nth-child(3) .infoContainer .content p {
+    font-size: 30px;
+    letter-spacing: 0px;
+    line-height: 40px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.report_main_container .row:nth-child(3) .line img {
+    width: 20%;
+}
+
+/*Row 3 Chart Style End*/

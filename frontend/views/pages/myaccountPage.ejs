@@ -1,0 +1,112 @@
+<% include('../layouts/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="Assets/Logo.png"> <!--Title Icon Link-->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <!--Font Awesome Link-->
+        <link rel="stylesheet" href="/css/myaccountPage.css">
+        <link rel="stylesheet" href="/css/messagealert.css">
+        <link rel="stylesheet" href="/css/photo.css">
+        <title>Pocket Saver - My Account</title>
+    </head>
+
+    <body>
+        <section class="section_1">
+            <div class="section_1_container">
+                <!-- <img src="Assets/HomePage/section BG.jpg" alt=""> -->
+                <div class="overlay">
+                    <p>
+                        <span>Simple way</span> <br> to manage <span>Your
+                            Account</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        >
+        <section class="section_2">
+            <div class="myaccount_container">
+
+                <div class="heading">
+                    <h2>My Account</h2>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/logout">Log Out</a>
+                </div>
+                <div class="account_information">
+                    <div class="avatarLogo"><img src="<%= user.image %>"
+                            alt="" class="profile-photo"></div>
+                    <div class="avatar_container">
+                        <h2><%=user.name %></h2>
+                        <p><%=user.email %></p>
+                    </div>
+                </div>
+                <div class="msg"> <%
+                    if(typeof message !=='undefined'){
+
+                    %>
+                    <h4 class="message"><%= message %></h4>
+                    <%
+                    }
+                    %></div>
+                <div class="form_container" id="formContainer">
+                    <ul class="list">
+                        <li class="options" onclick="changeUsernameDOM()">Change
+                            Name</li>
+                        <li class="options" onclick="changeMobileNoDOM()">Change
+                            Mobile No.</li>
+                        <li class="options" onclick="changePhotoDOM()">Update
+                            profile</li>
+                    </ul>
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="user_id"
+                            value="<%= user._id %>">
+                        <div class="options_container" id="chUsernameform"
+                            style="display: none;">
+                            <div class="row 1">
+                                <label>Enter New Name</label>
+                                <input type="text" name="name"
+                                    value="<%= user.name %>"
+                                    placeholder="Enter New Name">
+                            </div>
+                            <button type="submit">Change Name</button>
+                        </div>
+
+                       
+                        <div class="options_container" id="chMobileNo"
+                            style="display: none;">
+                            <div class="row 1">
+                                <label>Enter New Mobile No.</label>
+                                <input type="text" name="mobile"
+                                    value="<%= user.mobile %>"
+                                    placeholder="Enter Mobile No.">
+                            </div>
+                            <button type="submit" title="1">Change Mobile No.</button>
+                        </div>
+
+                        <div class="options_container" id="chPhoto"
+                            style="display: none;">
+                            <div class="row 1">
+                                <label for="image">Profile Image</label>
+                                <input type="file" id="image" name="image"
+                                    accept="image/*">
+                            </div>
+                            <button type="submit" title="1">Update profile</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="footing">
+                    <a href>Delete Account</a>
+                </div>
+            </div>
+        </section>
+        <script src="JS/myaccountPage.js"></script>
+    </body>
+
+</html>
+
+<% include('../layouts/footer.ejs') %>

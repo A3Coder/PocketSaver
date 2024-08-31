@@ -1,0 +1,908 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+
+/*Default Full Body CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+@media (min-width: 250px) and (max-width: 500px) {
+
+    /*For Line Chart Not Enough Data*/
+    .line {
+        width: 95%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    /*For Bar Chart Not Enough Data*/
+    .bar {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    /*Main Container Style Start*/
+    .report_main_container {
+        position: relative;
+        top: 60px;
+        left: 0px;
+        z-index: 0;
+
+        background-color: rgba(0, 0, 0, 0.05);
+
+        width: calc(100vw);
+        height: calc(100vh - 125px);
+        overflow-y: scroll;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /*Main Container Style End*/
+
+    /*Each Row Style Start*/
+    .report_main_container .row {
+        width: 95%;
+        height: 25%;
+
+        /* background-color: white;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; */
+    }
+
+    .report_main_container .row:nth-child(1) {
+        height: auto;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut {
+        width: 95%;
+        height: auto;
+        background-color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        /*For Not Enough Data*/
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut #doughChart {
+        padding: 5px;
+        width: 100%;
+        margin-right: 0px;
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul {
+        width: 100%;
+        height: auto;
+        list-style: none;
+        display: none;
+        /*We can Turn this to Flex*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul li {
+        width: 100%;
+        font-size: 15px;
+        font-weight: 400;
+        margin-right: 10px;
+        text-transform: capitalize;
+        text-align: justify;
+        padding: 5px 10px;
+        line-height: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul li span {
+        font-size: 15px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut img {
+        width: 20%;
+    }
+
+    /*Info Container Style Start*/
+    .report_main_container .row:nth-child(1) .infoContainer {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer {
+        margin-top: 10px;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 10px;
+        background-color: white;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo {
+        width: 70%;
+        padding: 0px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 400;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo p {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 300;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons {
+        width: 15%;
+        height: 100%;
+        padding: 3px;
+        background-color: black;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i {
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i:hover {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+    }
+
+    /*Info Container Style End*/
+
+    /*ExtraInfo Container Style Start*/
+    .report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+        width: 100%;
+        height: 30%;
+        background-color: white;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+        width: 100%;
+        height: 25%;
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 10px;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /*ExtraInfo Container Style End*/
+
+    /*Row 2 Chart Style Start*/
+    .report_main_container .row:nth-child(2) {
+        width: 95%;
+        height: auto;
+        padding: 5px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(2) canvas {
+        background-color: white;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(2) .infoContainer {
+        display: none;
+    }
+
+    .report_main_container .row:nth-child(2) .bar img {
+        width: 15%;
+    }
+
+    /*Row 2 Chart Style End*/
+
+    /*Row 3 Chart Style Start*/
+    .report_main_container .row:nth-child(3) {
+        height: auto;
+        padding: 5px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(3) canvas {
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(3) .infoContainer {
+        display: none;
+    }
+
+    .report_main_container .row:nth-child(3) .line img {
+        width: 15%;
+    }
+
+    /*Row 3 Chart Style End*/
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+
+    /*For Line Chart Not Enough Data*/
+    .line {
+        width: 95%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    /*For Bar Chart Not Enough Data*/
+    .bar {
+        width: 95%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    /*Main Container Style Start*/
+    .report_main_container {
+        position: relative;
+        top: 60px;
+        left: 60px;
+        z-index: 0;
+
+        background-color: rgba(0, 0, 0, 0.05);
+
+        width: calc(100vw - 75px);
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /*Main Container Style End*/
+
+    /*Each Row Style Start*/
+    .report_main_container .row {
+        width: 95%;
+        height: 25%;
+
+        /* background-color: white;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; */
+    }
+
+    .report_main_container .row:nth-child(1) {
+        height: auto;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut {
+        width: 95%;
+        height: auto;
+        background-color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        /*For Not Enough Data*/
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut #doughChart {
+        padding: 5px;
+        width: 100%;
+        margin-right: 0px;
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul {
+        width: 100%;
+        height: auto;
+        list-style: none;
+        display: none;
+        /*We can Turn this to Flex*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul li {
+        width: 100%;
+        font-size: 15px;
+        font-weight: 400;
+        margin-right: 10px;
+        text-transform: capitalize;
+        text-align: justify;
+        padding: 5px 10px;
+        line-height: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul li span {
+        font-size: 15px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut img {
+        width: 15%;
+    }
+
+    /*Info Container Style Start*/
+    .report_main_container .row:nth-child(1) .infoContainer {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer {
+        margin-top: 10px;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 10px;
+        background-color: white;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo {
+        width: 70%;
+        padding: 0px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 400;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo p {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 300;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons {
+        width: 15%;
+        height: 100%;
+        padding: 3px;
+        background-color: black;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i {
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i:hover {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+    }
+
+    /*Info Container Style End*/
+
+    /*ExtraInfo Container Style Start*/
+    .report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+        width: 100%;
+        height: 30%;
+        background-color: white;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+        width: 100%;
+        height: 25%;
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 10px;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /*ExtraInfo Container Style End*/
+
+    /*Row 2 Chart Style Start*/
+    .report_main_container .row:nth-child(2) {
+        width: 95%;
+        height: auto;
+        padding: 5px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(2) canvas {
+        background-color: white;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(2) .infoContainer {
+        display: none;
+    }
+
+    .report_main_container .row:nth-child(2) .bar img {
+        width: 15%;
+    }
+
+    /*Row 2 Chart Style End*/
+
+    /*Row 3 Chart Style Start*/
+    .report_main_container .row:nth-child(3) {
+        height: auto;
+        padding: 5px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(3) canvas {
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(3) .infoContainer {
+        display: none;
+    }
+
+    .report_main_container .row:nth-child(3) .line img {
+        width: 15%;
+    }
+
+    /*Row 3 Chart Style End*/
+}
+
+@media (min-width: 1001px) and (max-width: 1300px) {
+
+    /*For Line Chart Not Enough Data*/
+    .line {
+        width: 95%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    /*For Bar Chart Not Enough Data*/
+    .bar {
+        width: 95%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    /*Main Container Style Start*/
+    .report_main_container {
+        position: relative;
+        top: 60px;
+        left: 95px;
+        z-index: 0;
+
+        background-color: rgba(0, 0, 0, 0.05);
+
+        width: calc(100vw - 120px);
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /*Main Container Style End*/
+
+
+    /*Each Row Style Start*/
+    .report_main_container .row {
+        width: 95%;
+        height: 25%;
+
+        /* background-color: white;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; */
+    }
+
+    .report_main_container .row:nth-child(1) {
+        height: auto;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut {
+        width: 95%;
+        height: auto;
+        background-color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut #doughChart {
+        padding: 5px;
+        width: 100%;
+        margin-right: 0px;
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul {
+        width: 100%;
+        height: auto;
+        list-style: none;
+        display: flex;
+        /*We can Turn this to Flex*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul li {
+        width: 100%;
+        font-size: 15px;
+        font-weight: 400;
+        margin-right: 10px;
+        text-transform: capitalize;
+        text-align: justify;
+        padding: 5px 10px;
+        line-height: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut ul li span {
+        font-size: 15px;
+    }
+
+    .report_main_container .row:nth-child(1) .doughNut img {
+        width: 20%;
+    }
+
+    /*Info Container Style Start*/
+    .report_main_container .row:nth-child(1) .infoContainer {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer {
+        margin-top: 10px;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 10px;
+        background-color: white;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo {
+        width: 70%;
+        padding: 0px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 400;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo h3 i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .walletInfo p {
+        font-size: 20px;
+        letter-spacing: 0px;
+        font-weight: 300;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons {
+        width: 15%;
+        height: 100%;
+        padding: 3px;
+        background-color: black;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i {
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .walletInfoContainer .icons i:hover {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+    }
+
+    /*Info Container Style End*/
+
+    /*ExtraInfo Container Style Start*/
+    .report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+        width: 100%;
+        height: 30%;
+        background-color: white;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(1) .infoContainer .ExtraInfoContainer {
+        width: 100%;
+        height: 25%;
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 10px;
+
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /*ExtraInfo Container Style End*/
+
+    /*Row 2 Chart Style Start*/
+    .report_main_container .row:nth-child(2) {
+        width: 95%;
+        height: auto;
+        padding: 5px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(2) canvas {
+        background-color: white;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(2) .infoContainer {
+        display: none;
+    }
+
+    .report_main_container .row:nth-child(2) .bar img {
+        width: 13%;
+    }
+
+    /*Row 2 Chart Style End*/
+
+    /*Row 3 Chart Style Start*/
+    .report_main_container .row:nth-child(3) {
+        height: auto;
+        padding: 5px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .report_main_container .row:nth-child(3) canvas {
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .report_main_container .row:nth-child(3) .infoContainer {
+        display: none;
+    }
+
+    .report_main_container .row:nth-child(3) .line img {
+        width: 15%;
+    }
+
+    /*Row 3 Chart Style End*/
+}

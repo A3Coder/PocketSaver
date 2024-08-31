@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/Logo.png"> <!--Title Icon Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--Font Awesome Link-->
+    <link rel="stylesheet" href="/css/report.css">
+    <link rel="stylesheet" href="/css/reportResponsive.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/dashboardResponsive.css">
+    <link rel="stylesheet" href="/css/photo.css">
+    <title>PocketSaver - Dashboard Report</title>
+</head>
+
+<body>
+    <header class="dashboard_header">
+        <div class="container">
+            <div class="toolbar_container">
+                <div class="icon"><i class="fa-solid fa-wallet"></i></div>
+                <div class="content">
+                    <span class="name" id="headerbudgetName"></span>
+                    <span class="amount" id="headerbudgetAmount"></span>
+                </div>
+                <div id="editWallet" class="headerIcons"><a href="/dashboard"><i class="fa-solid fa-pen-to-square"></i></a></i></div>
+                <div id="dltWallet" class="headerIcons"><i class="fa-solid fa-trash"></i></div>
+            </div>
+            <div class="menu_container">
+                <button class="reportPDF" id="reportBTN">Download Report <i class="fa-solid fa-download"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <div class="list_items">
+            <div class="item 0" id="sidemenubarBTN">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <a href="/dashboard">
+                <div class="item 1">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Transactions</span>
+                </div>
+            </a>
+            <a href="/reportPage">
+                <div class="item 2 active">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Report</span>
+                </div>
+            </a>
+
+            <div class="straightLine"></div>
+
+            <a href="/contactUsPage">
+                <div class="item 3">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Contact</span>
+                </div>
+            </a>
+            <a href="/faqPage">
+                <div class="item 4">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span>Help</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="report_main_container">
+
+        <div class="row 1">
+            <div class="doughNut">
+                <canvas id="doughChart"></canvas>
+
+                <ul class="listofLegends">
+                    <!-- DOM -->
+                </ul>
+            </div>
+            <div class="infoContainer">
+                <div class="walletInfoContainer">
+                    <div class="walletInfo">
+                        <h3 id="reportWalletName"><i class="fa-solid fa-wallet"></i> Wallet</h3>
+                        <p id="reportWalletAmount"></p>
+                    </div>
+                    <div class="icons">
+                        <a href="/dashboard"><i class="fa-solid fa-gauge"></i></a>
+                        <a href="/myaccountPage"><i class="fa-solid fa-gear"></i></a>
+                    </div>
+                </div>
+                <div class="ExtraInfoContainer">
+                    <h3>Expense <i class="fa-solid fa-caret-down"></i></h3>
+                    <p id="reportTotalExpense"></p>
+                </div>
+                <div class="ExtraInfoContainer">
+                    <h3>Income <i class="fa-solid fa-caret-up"></i></h3>
+                    <p id="reportTotalIncome"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row 2" id="barContainer">
+            <div class="infoContainer">
+                <div class="heading">
+                    <h3>Bar Diagram Analysis</h3>
+                    <img src="Assets/ReportPage/bar.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Analysis for Amount Spent on Each Category</p>
+                </div>
+            </div>
+
+            <canvas id="barChart"></canvas>
+        </div>
+        <div class="row 3" id="lineContainer">
+            <canvas id="lineChart"></canvas>
+            <div class="infoContainer">
+                <div class="heading">
+                    <h3>Line Diagram Analysis</h3>
+                    <img src="Assets/ReportPage/line.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Analysis for Total Amount Spent on a Particular Date</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="overlay"></div>
+    <!--Side Menu Bar Starts Here-->
+    <div class="sidemenubar" id="sidemenubar">
+        <div id="closeBTN">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="avatar_container">
+            <div class="name_avatar"><span id="avatarLetter"><img src="<%= user.image %>" alt=""
+                        class="profile-photo"></span></div>
+            <p id="avatar_username">
+                <%= user.name %>
+            </p>
+            <span id="avatar_emailid">
+                <%= user.email %>
+            </span>
+        </div>
+
+        <a href="/myaccountPage">
+            <div class="icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="headings">
+                <span>My Account</span>
+            </div>
+        </a>
+
+        <a href="/walletPage">
+            <div class="icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <div class="headings">
+                <span>My Wallets</span>
+            </div>
+        </a>
+
+        <a href="/categoriesPage">
+            <div class="icon">
+                <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+            <div class="headings">
+                <span>Categories</span>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        const itemsLink = document.querySelectorAll(".item");
+
+        itemsLink.forEach(itemlink => {
+            itemlink.addEventListener('click', () => {
+                document.querySelector('.active')?.classList.remove('active');
+                itemlink.classList.add('active');
+            })
+        })
+
+        const sidemenubarBTN = document.getElementById("sidemenubarBTN")
+        const closeBTN = document.getElementById("closeBTN")
+        const overlay = document.getElementById("overlay")
+
+        sidemenubarBTN.addEventListener('click', () => {
+            document.getElementById("sidemenubar").style.left = "0px";
+            overlay.style.display = "block";
+        })
+
+        closeBTN.addEventListener('click', () => {
+            document.getElementById("sidemenubar").style.left = "-310px";
+            overlay.style.display = "none";
+            itemsLink[0].classList.remove('active');
+            itemsLink[2].classList.add('active');
+        })
+
+        overlay.addEventListener('click', () => {
+            document.getElementById("sidemenubar").style.left = "-310px";
+            overlay.style.display = "none";
+            itemsLink[0].classList.remove('active');
+            itemsLink[2].classList.add('active');
+        })
+    </script>
+    <script src="JS/chart.js"></script>
+    <script src="JS/dashboardHeader.js"></script>
+    <script src="JS/doughNutChart.js"></script>
+    <script src="JS/barChart.js"></script>
+    <script src="JS/lineChart.js"></script>
+    <script src="JS/reportPage.js"></script>
+</body>
+
+</html>

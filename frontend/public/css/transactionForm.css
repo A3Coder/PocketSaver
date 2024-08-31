@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+/*Default Full Body CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+/*Transaction Form Style Start*/
+.transactionForm_container{
+    position: absolute;
+    z-index: 10;
+
+    width: 700px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.transactionForm_container .heading{
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.transactionForm_container .heading p{
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.transactionForm_container .main_form{
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.transactionForm_container .main_form .rows{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transactionForm_container .main_form .rows:not(:last-child){
+    margin-bottom: 15px;
+}
+
+.transactionForm_container .main_form .rows .cols{
+    width: 45%;
+    min-height: 85px;
+    padding: 10px;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.transactionForm_container .main_form .rows .cols p{
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.transactionForm_container .main_form .rows .cols input{
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    border: none;
+}
+
+.transactionForm_container .main_form .rows .cols .selector{
+    position: relative;
+    width: 100%;
+    padding-left: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.transactionForm_container .main_form .rows .cols .selector::after{
+    content: '>';
+    position: absolute;
+    right: 0px;
+    transform: rotate(90deg);
+}
+
+
+.transactionForm_container .main_form .rows .cols .selector p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+.transactionForm_container .main_form .rows .cols .selector .list{
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+
+    list-style: none;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.transactionForm_container .main_form .rows .cols .selector .list li{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+
+    transition: 0.3s ease;
+}
+
+.transactionForm_container .main_form .rows .cols .selector .list li p{
+    margin-bottom: 0px;
+}
+
+
+.transactionForm_container .main_form .rows .cols .selector .list .option:not(:last-child){
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.transactionForm_container .main_form .rows .cols .selector .list li:hover{
+    padding-left: 30px;
+}
+
+.transactionForm_container .footing{
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.transactionForm_container .footing button{
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 15px;
+    margin-left: 15px;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.transactionForm_container .footing button:hover{
+    background-color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: black;
+}
+/*Transaction Form Style End*/

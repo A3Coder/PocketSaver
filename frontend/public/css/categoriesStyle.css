@@ -1,0 +1,538 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto";
+}
+body {
+  background-color: white;
+}
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  /* max-width: 1500px; */
+  margin: 0 auto;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  background-color: white;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.118);
+}
+
+h1 {
+  display: inline-block;
+  margin-left: 0.5em;
+}
+i {
+  display: inline-block;
+
+  font-size: 30px;
+}
+a {
+  color: black;
+}
+
+.wallet {
+  text-decoration: none;
+}
+.wallet img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.nav {
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 3em 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: 60px;
+  background-color: white;
+  box-shadow: 0px 2px 12px 2px rgba(0, 0, 0, 0.508);
+}
+
+.container > div {
+  width: 100%;
+}
+
+h5 {
+  padding: 12px;
+  font-size: 15px;
+}
+p {
+  padding: 17px;
+  font-size: 17px;
+  margin-left: 9px;
+}
+.exp {
+  border-bottom: 1px solid black;
+  background-color: rgba(10, 9, 8, 0.955);
+  color: white;
+}
+.food {
+  /* margin: 10px; */
+  border-bottom: 1px solid black;
+  display: flex;
+}
+a {
+  text-decoration: none;
+}
+.exp2 {
+  margin-top: 0px;
+  border-bottom: 1px solid black;
+  background-color: rgba(10, 9, 8, 0.955);
+  color: white;
+}
+.f {
+  background-image: url('/Assets/categoriesPage/food.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top: 5px;
+  height: 45px;
+  width: 70px;
+}
+.f2 {
+  background-image: url('/Assets/categoriesPage/transport.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 10px;
+  height: 40px;
+  width: 60px;
+}
+.f3 {
+  background-image: url('/Assets/categoriesPage/rental.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 10px;
+  height: 40px;
+  width: 60px;
+}
+.f4 {
+  background-image: url('/Assets/categoriesPage/water.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 10px;
+  height: 40px;
+  width: 60px;
+}
+.f5 {
+  background-image: url('/Assets/categoriesPage/telephone.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 10px;
+  height: 40px;
+  width: 60px;
+}
+
+.f6 {
+  background-image: url('/Assets/categoriesPage/electricity.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 10px;
+  height: 40px;
+  width: 60px;
+}
+.f7 {
+  background-image: url('/Assets/categoriesPage/cylinder.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
+  /* border-bottom-left-radius: 10px; */
+  margin-top: 7px;
+  margin-left: 10px;
+  margin-bottom: 6px;
+  height: 47px;
+  width: 60px;
+}
+.f8 {
+  background-image: url('/Assets/categoriesPage/tv.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 19px;
+  height: 40px;
+  width: 50px;
+}
+.f9 {
+  background-image: url('/Assets/categoriesPage/internet.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 20px;
+  height: 40px;
+  width: 50px;
+}
+
+/* .f10 {
+  background-image: url(other.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 7px;
+  margin-left: 0px;
+  height: 40px;
+  width: 70px;
+} */
+.f11 {
+  background-image: url('/Assets/categoriesPage/home.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-top: 5px;
+  margin-left: 18px;
+  height: 45px;
+  width: 45px;
+}
+.f12 {
+  background-image: url('/Assets/categoriesPage/vehical.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-left: 12px;
+  height: 45px;
+  width: 50px;
+}
+.f13 {
+  background-image: url('/Assets/categoriesPage/checkup.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 14px;
+  height: 40px;
+  width: 50px;
+}
+.f14 {
+  background-image: url('/Assets/categoriesPage/insurance.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  margin-left: 15px;
+  height: 36px;
+  width: 50px;
+}
+.f15 {
+  background-image: url('/Assets/categoriesPage/education.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 45px;
+  width: 60px;
+}
+.f16 {
+  background-image: url('/Assets/categoriesPage/houseware.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 14px;
+  height: 45px;
+  width: 50px;
+}
+.f17 {
+  background-image: url('/Assets/categoriesPage/personal.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 15px;
+  height: 45px;
+  width: 50px;
+}
+.f18 {
+  background-image: url('/Assets/categoriesPage/pets.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 45px;
+  width: 60px;
+}
+
+.f19 {
+  background-image: url('/Assets/categoriesPage/homes.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+}
+/* .f20 {
+  background-image: url(other2.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+} */
+.f21 {
+  background-image: url('/Assets/categoriesPage/fitness.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 1px;
+  height: 40px;
+  width: 65px;
+}
+.f22 {
+  background-image: url('/Assets/categoriesPage/makeup.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+}
+.f23 {
+  background-image: url('/Assets/categoriesPage/gift.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+}
+.f24 {
+  background-image: url('/Assets/categoriesPage/streaming.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+}
+/* .f25 {
+  background-image: url(fun.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 7px;
+  margin-left: 20px;
+  height: 40px;
+  width: 40px;
+} */
+.f26 {
+  background-image: url('/Assets/categoriesPage/investment.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 9px;
+  margin-left: 10px;
+  height: 40px;
+  width: 50px;
+}
+.f27 {
+  background-image: url('/Assets/categoriesPage/collect.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 8px;
+  height: 40px;
+  width: 50px;
+}
+/* .f28 {
+  background-image: url(dept.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 10px;
+  height: 40px;
+  width: 50px;
+} */
+.f29 {
+  background-image: url('/Assets/categoriesPage/loan.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+}
+/* .f30 {
+  background-image: url(repayment.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+} */
+.f31 {
+  background-image: url('/Assets/categoriesPage/interest.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+}
+/* .f32 {
+  background-image: url(collect.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 13px;
+  height: 40px;
+  width: 50px;
+}
+.f33 {
+  background-image: url(salary.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 8px;
+  margin-left: 16px;
+  height: 40px;
+  width: 43px;
+} */
+.f34 {
+  background-image: url('/Assets/categoriesPage/other2.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 40px;
+  width: 55px;
+}
+/* .f35 {
+  background-image: url(outgoing.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 9px;
+  margin-left: 6px;
+  height: 40px;
+  width: 55px;
+}
+.f36 {
+  background-image: url(incoming.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-left: 3px;
+  height: 40px;
+  width: 60px;
+} */
+
+
+@media (min-width: 250px) and (max-width: 500px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    /* max-width: 1500px; */
+    margin: 0 auto;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    background-color: white;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.118);
+  }
+
+  .navbar .cat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar .cat i{
+    font-size: 25px;
+  }
+
+  .navbar .cat h1{
+    font-size: 25px;
+    margin-left: 10px;
+  }
+
+  .navbar .wallet img{
+    width: 40px;
+    height: 40px;
+  }
+}

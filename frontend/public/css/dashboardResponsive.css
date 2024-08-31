@@ -1,0 +1,1628 @@
+@media (min-width: 250px) and (max-width: 500px) {
+
+    /*Dashboard Header Style Start*/
+    .dashboard_header {
+        /*Z Index --> 1*/
+        position: fixed;
+        top: 0;
+        z-index: 1;
+
+        width: 100vw;
+        height: 60px;
+        background-color: white;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .dashboard_header .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashboard_header .container .toolbar_container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .dashboard_header .container .toolbar_container .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .dashboard_header .container .toolbar_container .icon i {
+        color: white;
+        font-size: 13px;
+    }
+
+    .dashboard_header .container .toolbar_container .content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard_header .container .toolbar_container .content .name {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .dashboard_header .container .toolbar_container .content .amount {
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .dashboard_header .container .menu_container {
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .dashboard_header .container .menu_container button.transactionbtn {
+        display: none;
+    }
+
+    .dashboard_header .container .menu_container button.moneyBTN {
+        display: none;
+    }
+
+    /*Dashboard Header Style End*/
+
+    /*Dashboard Sidebar Style Start*/
+    .sidebar {
+        /*Z Index --> 2*/
+        position: fixed;
+        top: initial;
+        left: 0;
+        bottom: 0px;
+        z-index: 2;
+
+        width: 100vw;
+        height: auto;
+        background-color: white;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+        padding: 0px 5px;
+    }
+
+    .sidebar .list_items {
+        height: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .sidebar .list_items .item {
+        width: 100%;
+        height: 65px;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .sidebar .list_items .item:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sidebar .list_items .item i {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .sidebar .list_items .item span {
+        font-size: 9px;
+        letter-spacing: 0px;
+        font-weight: 400;
+    }
+
+    .sidebar .list_items .straightLine {
+        width: 5px;
+        height: 50px;
+        margin: 0px 3px;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar .list_items .item:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+    }
+
+    .sidebar .list_items .item.active {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        border-left: 0px solid rgba(0, 0, 0, 0.4);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar .list_items button.transactionbtn {
+        display: block;
+
+        width: 90%;
+        padding: 5px 5px;
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 25px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+
+        transition: 0.3s ease;
+    }
+
+    .sidebar .list_items button.transactionbtn:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    .sidebar .list_items button.moneyBTN {
+        display: block;
+
+        width: 90%;
+        padding: 5px 5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 5px;
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-size: 25px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .sidebar .list_items button.moneyBTN:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    /*Dashboard Sidebar Style End*/
+
+    /*Dashboard Side Menubar Style Start*/
+    .sidemenubar {
+        position: fixed;
+        top: 0;
+        left: -235px;
+        z-index: 15;
+        /*Z Index --> 15*/
+
+        width: 225px;
+        height: 100vh;
+
+        transition: 0.5s ease;
+    }
+
+    .sidemenubar #closeBTN {
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    .sidemenubar .avatar_container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .sidemenubar .avatar_container .name_avatar {
+        width: 75px;
+        height: 75px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .sidemenubar .avatar_container .name_avatar span {
+        font-size: 75%;
+        font-weight: 400;
+        color: white;
+    }
+
+    .sidemenubar .avatar_container p {
+        font-size: 100%;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .sidemenubar .avatar_container span {
+        font-size: 75%;
+        font-weight: 400;
+        letter-spacing: 0px;
+    }
+
+    .sidemenubar button.transactionbtn {
+        display: block;
+        width: 90%;
+        padding: 10px 5px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin-left: 0px;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .sidemenubar button.transactionbtn:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    .sidemenubar button.moneyBTN {
+        display: block;
+        width: 90%;
+        padding: 10px 5px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin-left: 0px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .sidemenubar button.moneyBTN:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    /*Dashboard Side Menubar Style End*/
+
+    /*Main Container Style Start*/
+    .main_container {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        /*Width of Sidebar*/
+        z-index: 0;
+
+        width: 100vw;
+        height: calc(100vh - 65px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Main Container Style End*/
+
+    #overlay2 {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        /*Z Index --> 10*/
+        background-color: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(3px);
+        width: 100vw;
+        height: calc(100vh - 65px);
+    }
+
+    /*Add First Budget Button Style Start*/
+    .main_container .content_container {
+        position: absolute;
+        z-index: 8;
+        /*Z Index --> 8*/
+
+        width: 95%;
+        background-color: white;
+        border-radius: 7px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main_container .content_container .heading {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .main_container .content_container .heading h3 {
+        font-size: 20px;
+        letter-spacing: 0px;
+    }
+
+    .main_container .content_container .button {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .main_container .content_container .button button {
+        width: 100%;
+        border-radius: 10px;
+        font-size: 16px;
+        padding: 7px 0px;
+    }
+
+    /*Add First Budget Button Style End*/
+
+    /*Budget Form Style Start*/
+    .main_container .budget_form {
+        position: absolute;
+        z-index: 10;
+        /*Z Index --> 10*/
+
+        width: 95%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .main_container .budget_form .form_container {
+        width: 100%;
+    }
+
+    .main_container .budget_form .heading {
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .main_container .budget_form .heading h3 {
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .main_container .budget_form .row {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 2px solid black;
+        border-radius: 3px;
+    }
+
+    .main_container .budget_form .row label {
+        font-size: 15px;
+        letter-spacing: 0px;
+        margin-bottom: 7px;
+    }
+
+    .main_container .budget_form .row input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 13px;
+        letter-spacing: 0px;
+    }
+
+    .main_container .budget_form button {
+        font-size: 17px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        padding: 10px 0px;
+
+        transition: 0.3s ease;
+    }
+
+    /*Budget Form Style End*/
+
+
+
+    /*Transaction Form Style Start*/
+    .transactionForm_container {
+        position: absolute;
+        z-index: 13;
+        /*Z Index --> 13*/
+        top: 120px;
+
+        width: 95%;
+        padding: 5px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .transactionForm_container .heading {
+        width: 100%;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .transactionForm_container .heading p {
+        font-size: 16px;
+        letter-spacing: 0px;
+        font-weight: 400;
+    }
+
+    .transactionForm_container .main_form {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .transactionForm_container .main_form .rows {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .transactionForm_container .main_form .rows .cols {
+        width: 100%;
+        min-height: 85px;
+        padding: 7px;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 7px;
+    }
+
+    .transactionForm_container .main_form .rows .cols p {
+        font-size: 15px;
+    }
+
+    .transactionForm_container .main_form .rows .cols input {
+        width: 100%;
+        padding-left: 7px;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+
+    .transactionForm_container .main_form .rows .cols .selector {
+        position: relative;
+        width: 100%;
+        padding-left: 7px;
+
+    }
+
+    .transactionForm_container .main_form .rows .cols .selector::after {
+        content: '>';
+        position: absolute;
+        right: 5px;
+        transform: rotate(90deg);
+    }
+
+
+    .transactionForm_container .main_form .rows .cols .selector p {
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+
+    .transactionForm_container .main_form .rows .cols .selector .list {
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        left: 0;
+
+        list-style: none;
+        background-color: white;
+        border-radius: 7px;
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .transactionForm_container .main_form .rows .cols .selector .list li {
+        width: 100%;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        padding: 10px;
+
+        transition: 0.3s ease;
+    }
+
+    .transactionForm_container .main_form .rows .cols .selector .list li p {
+        margin-bottom: 0px;
+    }
+
+
+    .transactionForm_container .main_form .rows .cols .selector .list .option:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .transactionForm_container .main_form .rows .cols .selector .list li:hover {
+        padding-left: 30px;
+    }
+
+    .transactionForm_container .footing {
+        width: 100%;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .transactionForm_container .footing button {
+        width: 75%;
+        font-size: 15px;
+        font-weight: 400;
+        border-radius: 5px;
+        padding: 10px 7px;
+        margin-left: 0px;
+
+        margin-bottom: 7px;
+        transition: 0.3s ease;
+    }
+
+    .transactionForm_container .footing button:hover {
+        background-color: white;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        color: black;
+    }
+    /*Transaction Form Style End*/
+
+    /*Income Form Style Start*/
+    .incomeForm_container {
+        position: absolute;
+        z-index: 13;
+        /*Z Index --> 13*/
+        top: 135px;
+        width: 95%;
+        padding: 7px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .incomeForm_container .heading {
+        width: 100%;
+        padding-bottom: 7px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .incomeForm_container .main_form {
+        width: 100%;
+        padding: 10px 5px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .incomeForm_container .main_form .rows {
+        width: 100%;
+    }
+
+    .incomeForm_container .main_form .rows .cols {
+        width: 100%;
+        min-height: 85px;
+        padding: 7px;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+    .incomeForm_container .main_form .rows .cols:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .incomeForm_container .main_form .rows .cols p {
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .incomeForm_container .main_form .rows .cols input {
+        width: 100%;
+        height: 30px;
+        padding-left: 5px;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        border: none;
+    }
+
+    .incomeForm_container .footing {
+        width: 100%;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .incomeForm_container .footing button {
+        width: 50%;
+        font-size: 13px;
+        font-weight: 400;
+        border-radius: 5px;
+        color: white;
+        padding: 10px 10px;
+        margin-left: 0px;
+        margin-bottom: 5px;
+
+        transition: 0.3s ease;
+    }
+    /*Income Form Style End*/
+
+
+    /*Transaction Container Style Start*/
+    .transaction_container {
+        position: absolute;
+        z-index: 12;
+        /*Z Index --> 12*/
+
+        width: 95%;
+        max-height: 75vh;
+        padding: 7px;
+        border-radius: 7px;
+        box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .transaction_container .heading {
+        padding: 7px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 400;
+
+        border-radius: 25px;
+        border: 3px solid rgb(0, 0, 0);
+    }
+
+    .transaction_container .main_content {
+        /*Main Content Style Start*/
+        width: 95%;
+        padding: 7px;
+        background-color: white;
+    }
+
+    .transaction_container .main_content .row {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .transaction_container .main_content .row span {
+        font-size: 16px;
+        letter-spacing: 0px;
+        font-weight: 400;
+    }
+
+    .transaction_container .main_content .straightLine {
+        /*Main Content Style End*/
+        width: 100%;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .transaction_container .expense_details {
+        width: 100%;
+        background-color: white;
+
+        overflow-y: scroll;
+    }
+
+    .transaction_container .expense_content {
+        /*Expense Content Style Start*/
+        width: 100%;
+        padding: 7px;
+
+        margin-bottom: 10px;
+    }
+
+    /*Expense Content Category Style Start*/
+    .transaction_container .expense_content .category {
+        width: 100%;
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .transaction_container .expense_content .category .category_content {
+        width: 100%;
+        padding: 7px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .transaction_container .expense_content .category .category_content h3 {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .category .category_content h3 span {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        font-size: 16px;
+    }
+
+    .transaction_container .expense_content .category .category_content p {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .category span {
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        align-self: flex-end;
+    }
+
+    /*Expense Content Transactions Style Start*/
+    .transaction_container .expense_content .transactions {
+        width: 100%;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .transaction_container .expense_content .transactions h3 {
+        font-size: 20px;
+        margin-right: 7px;
+    }
+
+    .transaction_container .expense_content .transactions .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .transaction_container .expense_content .transactions .content h4 {
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .transactions .content p {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .transactions span {
+        /*Expense Content Transactions Style End*/
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: red;
+    }
+
+    /*Income Details Heading Style Start*/
+    .transaction_container .heading2 {
+        padding: 7px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 400;
+        border-radius: 50px;
+        border: 3px solid rgb(0, 0, 0);
+    }
+
+    .transaction_container .heading2::after {
+        content: '>';
+        font-size: 20px;
+        position: absolute;
+        right: 13px;
+        bottom: 8px;
+    }
+
+    /*Income Details Style Start*/
+    .transaction_container .income_details {
+        width: 100%;
+        background-color: white;
+
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .transaction_container .income_content {
+        /*Income Content Style Start*/
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        margin-bottom: 10px;
+    }
+
+    /*Income Content Transactions Style Start*/
+    .transaction_container .income_content .transactions {
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .transaction_container .income_content .transactions h3 {
+        font-size: 20px;
+        margin-right: 7px;
+    }
+
+    .transaction_container .income_content .transactions .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .transaction_container .income_content .transactions .content h4 {
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .income_content .transactions .content p {
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .income_content .transactions span {
+        /*Income Content Transactions Style End*/
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: rgb(9, 255, 0);
+    }
+
+    /*Transaction Container Style End*/
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+
+    /*Dashboard Header Style Start*/
+    .dashboard_header {
+        /*Z Index --> 1*/
+        position: fixed;
+        top: 0;
+        z-index: 1;
+
+        width: 100vw;
+        height: 60px;
+        background-color: white;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 70px;
+        padding-right: 10px;
+    }
+
+    .dashboard_header .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashboard_header .container .toolbar_container {
+        width: 75%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .dashboard_header .container .toolbar_container .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .dashboard_header .container .toolbar_container .icon i {
+        color: white;
+        font-size: 15px;
+    }
+
+    .dashboard_header .container .toolbar_container .content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard_header .container .toolbar_container .content .name {
+        font-size: 17px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .dashboard_header .container .toolbar_container .content .amount {
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .dashboard_header .container .menu_container {
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .dashboard_header .container .menu_container button.transactionbtn {
+        display: none;
+    }
+
+    .dashboard_header .container .menu_container button.moneyBTN {
+        display: none;
+    }
+
+    /*Dashboard Header Style End*/
+
+    /*Dashboard Sidebar Style Start*/
+    .sidebar {
+        /*Z Index --> 2*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        width: 60px;
+        height: 100vh;
+        background-color: white;
+        box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar .list_items {
+        height: 40%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sidebar .list_items .item {
+        width: 100%;
+        height: 65px;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .sidebar .list_items .item:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sidebar .list_items .item i {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .sidebar .list_items .item span {
+        font-size: 9px;
+        letter-spacing: 0px;
+        font-weight: 400;
+    }
+
+    .sidebar .list_items .straightLine {
+        width: 100%;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar .list_items .item:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+    }
+
+    .sidebar .list_items .item.active {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+    }
+
+    .sidebar .list_items button.transactionbtn {
+        display: block;
+
+        width: 90%;
+        padding: 5px 5px;
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 25px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .sidebar .list_items button.transactionbtn:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    .sidebar .list_items button.moneyBTN {
+        display: block;
+
+        width: 90%;
+        padding: 5px 5px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-size: 25px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .sidebar .list_items button.moneyBTN:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    /*Dashboard Sidebar Style End*/
+
+    /*Dashboard Side Menubar Style Start*/
+    .sidemenubar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        z-index: 15;
+        /*Z Index --> 15*/
+
+        width: 250px;
+        height: 100vh;
+
+        transition: 0.5s ease;
+    }
+
+    .sidemenubar #closeBTN {
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    .sidemenubar .avatar_container {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .sidemenubar .avatar_container .name_avatar {
+        width: 75px;
+        height: 75px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .sidemenubar .avatar_container .name_avatar span {
+        font-size: 75%;
+        font-weight: 400;
+        color: white;
+    }
+
+    .sidemenubar .avatar_container p {
+        font-size: 100%;
+        font-weight: 400;
+        letter-spacing: 0px;
+    }
+
+    .sidemenubar .avatar_container span {
+        font-size: 100%;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .sidemenubar a {
+        width: 100%;
+        text-decoration: none;
+        padding-left: 15px;
+        color: black;
+
+        transition: 0.3s ease;
+    }
+
+    .sidemenubar a .icon {
+        width: 20%;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .sidemenubar a .headings {
+        width: 75%;
+        height: 40px;
+        padding: 30px 0;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    .sidemenubar a .headings span::after {
+        content: '>';
+        position: absolute;
+        right: 20px;
+        font-weight: 400;
+    }
+
+    .sidemenubar a:hover {
+        padding-left: 25px;
+    }
+
+    .sidemenubar button.transactionbtn {
+        display: block;
+        width: 90%;
+        padding: 10px 5px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin-left: 0px;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .sidemenubar button.transactionbtn:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    .sidemenubar button.moneyBTN {
+        display: block;
+        width: 90%;
+        padding: 10px 5px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin-left: 0px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: white;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .sidemenubar button.moneyBTN:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid black;
+        color: black;
+    }
+
+    /*Dashboard Side Menubar Style End*/
+
+    /*Main Container Style Start*/
+    .main_container {
+        position: absolute;
+        top: 0;
+        left: 60px;
+        /*Width of Sidebar*/
+        z-index: 0;
+
+        width: calc(100vw - 60px);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Main Container Style End*/
+
+    #overlay2 {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        /*Z Index --> 10*/
+        background-color: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(3px);
+        width: calc(100vw - 60px);
+        height: 100vh;
+    }
+
+    /*Add First Budget Button Style Start*/
+    .main_container .content_container {
+        position: absolute;
+        z-index: 8;
+        /*Z Index --> 8*/
+
+        width: 90%;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main_container .content_container .heading {
+        width: 100%;
+        padding: 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .main_container .content_container .heading h3 {
+        font-size: 25px;
+        letter-spacing: 0px;
+    }
+
+    .main_container .content_container .button {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .main_container .content_container .button button {
+        width: 100%;
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 10px 0px;
+    }
+
+    /*Add First Budget Button Style End*/
+
+    /*Budget Form Style Start*/
+    .main_container .budget_form {
+        position: absolute;
+        z-index: 10;
+        /*Z Index --> 10*/
+
+        width: 95%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .main_container .budget_form .form_container {
+        width: 100%;
+    }
+
+    /*Budget Form Style End*/
+
+    /*Transaction Form Style Start*/
+    .transactionForm_container {
+        position: absolute;
+        z-index: 13;
+        /*Z Index --> 13*/
+        top: 135px;
+
+        width: 95%;
+        padding: 7px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /*Transaction Form Style End*/
+
+    /*Income Form Style Start*/
+    .incomeForm_container {
+        position: absolute;
+        z-index: 13;
+        /*Z Index --> 13*/
+        top: 135px;
+        width: 95%;
+        padding: 7px;
+        background-color: white;
+        border-radius: 5px;
+    }
+    /*Income Form Style End*/
+
+    /*Transaction Container Style Start*/
+    .transaction_container {
+        position: absolute;
+        z-index: 12;
+        /*Z Index --> 12*/
+
+        width: 95%;
+        max-height: 75vh;
+        padding: 7px;
+        border-radius: 7px;
+        box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .transaction_container .heading {
+        padding: 7px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 400;
+
+        border-radius: 25px;
+        border: 3px solid rgb(0, 0, 0);
+    }
+
+    .transaction_container .main_content {
+        /*Main Content Style Start*/
+        width: 95%;
+        padding: 7px;
+        background-color: white;
+    }
+
+    .transaction_container .main_content .row {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .transaction_container .main_content .row span {
+        font-size: 16px;
+        letter-spacing: 0px;
+        font-weight: 400;
+    }
+
+    .transaction_container .main_content .straightLine {
+        /*Main Content Style End*/
+        width: 100%;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .transaction_container .expense_details {
+        width: 100%;
+        background-color: white;
+
+        overflow-y: scroll;
+    }
+
+    .transaction_container .expense_content {
+        /*Expense Content Style Start*/
+        width: 100%;
+        padding: 7px;
+
+        margin-bottom: 10px;
+    }
+
+    /*Expense Content Category Style Start*/
+    .transaction_container .expense_content .category {
+        width: 100%;
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .transaction_container .expense_content .category .category_content {
+        width: 100%;
+        padding: 7px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .transaction_container .expense_content .category .category_content h3 {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .category .category_content h3 span {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        font-size: 16px;
+    }
+
+    .transaction_container .expense_content .category .category_content p {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .category span {
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        align-self: flex-end;
+    }
+
+    /*Expense Content Transactions Style Start*/
+    .transaction_container .expense_content .transactions {
+        width: 100%;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .transaction_container .expense_content .transactions h3 {
+        font-size: 20px;
+        margin-right: 7px;
+    }
+
+    .transaction_container .expense_content .transactions .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .transaction_container .expense_content .transactions .content h4 {
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .transactions .content p {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .expense_content .transactions span {
+        /*Expense Content Transactions Style End*/
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: red;
+    }
+
+    /*Income Details Heading Style Start*/
+    .transaction_container .heading2 {
+        padding: 7px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 400;
+        border-radius: 50px;
+        border: 3px solid rgb(0, 0, 0);
+    }
+
+    .transaction_container .heading2::after {
+        content: '>';
+        font-size: 20px;
+        position: absolute;
+        right: 90px;
+        bottom: 8px;
+    }
+
+    /*Income Details Style Start*/
+    .transaction_container .income_details {
+        width: 100%;
+        background-color: white;
+
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .transaction_container .income_content {
+        /*Income Content Style Start*/
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        margin-bottom: 10px;
+    }
+
+    /*Income Content Transactions Style Start*/
+    .transaction_container .income_content .transactions {
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .transaction_container .income_content .transactions h3 {
+        font-size: 20px;
+        margin-right: 7px;
+    }
+
+    .transaction_container .income_content .transactions .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .transaction_container .income_content .transactions .content h4 {
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .income_content .transactions .content p {
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+
+    .transaction_container .income_content .transactions span {
+        /*Income Content Transactions Style End*/
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        color: rgb(9, 255, 0);
+    }
+
+    /*Transaction Container Style End*/
+}

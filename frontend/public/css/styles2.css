@@ -1,0 +1,36 @@
+#pswd_info {
+    position: absolute;
+    width: 250px;
+  
+    padding: 15px;
+    background: #fff;
+    font-size: .875em;
+    border-radius: 5px;
+    z-index: 55;
+    margin-left: 678px;
+    margin-top: -184px;
+  
+  }
+  
+  #pswd_info ul li {
+    list-style-type: none;
+  }
+  
+  #pswd_info ul li .fa {
+    margin-left: -20px;
+    margin-right: 5px;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .invalid {
+    line-height: 24px;
+    color: #ec3f41;
+  }
+  
+  .valid,.text-info {
+    line-height: 24px;
+    color: #12ab68;
+  }

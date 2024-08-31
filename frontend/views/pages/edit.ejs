@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="user_id" value="<%= user._id %>">
+        <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
+        <br><br>
+        <input type="email" name="email" value="<%= user.email %>" placeholder="Enter email" required>
+        <br><br>
+        <input type="text" name="mobile" value="<%= user.mobile %>" placeholder="Enter Mobile No." required>
+        <br>
+        <label for="image">Profile Image</label>
+        <input type="file" id="image" name="image" accept="image/*">
+        <button type="submit" value="Update profile">Update profile</button>
+    </form>
+</div>
+</body>
+</html>

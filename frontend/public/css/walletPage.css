@@ -1,0 +1,169 @@
+/* Default CSS Settings */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    overflow-x: hidden;
+}
+
+
+.navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100vw;
+            background: #242729;
+            padding: 0 50px;
+            height: 8rem;
+            box-shadow: 2px 2px 5px 0px white;
+        }
+
+        .navbar i{
+            font-size: 25px;
+            color: white;
+            margin-right: 35px;
+
+        }
+
+        .header .navbar .logo {
+            color: white;
+            float: left;
+            font-size: 3.5rem;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .header .navbar .logo span{
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .header .navbar .nav-items a {
+            color: rgba(255, 255, 255, 0.686);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .header .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .header .navbar .nav-items {
+            text-align: center;
+            padding-top: 1rem;
+            width: 100%;
+        }
+
+        .main-heading {
+            text-transform: uppercase;
+        }
+
+        .navbar::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .navbar .nav-items .nav-item {
+            display: inline-block;
+            padding: 0rem 2rem;
+        }
+
+        /* About section */
+        .wallet-container {
+            border: 1px solid #a7bba7;
+            width: 80%;
+            height: 10rem;
+            margin: 5rem auto;
+        }
+
+        .wallet-body {
+
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            margin-top: 15px;
+        }
+
+        .wallet-body .imgBX {
+            margin-right: 15px;
+        }
+
+        .wallet-body img {
+            height: 5rem;
+            border-radius: 50%;
+        }
+
+        .wallet-body p {
+            font-weight: 300;
+        }
+
+        .wallet-heading {
+            border-bottom: 1px solid #d2ded2;
+            background: beige;
+            padding: 1rem;
+        }
+
+        .wallet-heading p {
+            padding: 0 25px;
+            font-weight: 500;
+            display: inline;
+        }
+
+        .wallet-money {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        @media (min-width:250px) and (max-width:500px) {
+            .logo {
+                font-size: 1.5rem !important;
+                color: green;
+            }
+
+            .header .navbar .logo span{
+                font-size: 13px;
+                font-weight: 300;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100vw;
+                background: #242729;
+                padding: 0 15px;
+                height: 8rem;
+                box-shadow: 2px 2px 5px 0px white;
+            }
+
+            .navbar i{
+                font-size: 1rem;
+                color: white;
+                margin-right: 20px;
+    
+            }
+
+            .wallet-container {
+                border: 1px solid #a7bba7;
+                width: 80%;
+                height: 10rem;
+                margin: 5rem auto;
+            }
+        }

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Example</title>
+    <link rel="stylesheet" type="text/css" href="/css/photo.css">
+</head>
+<body>
+    <h1>Profile Picture Upload</h1>
+    <form enctype="multipart/form-data" action="/upload" method="post">
+        <input type="file" name="userPhoto" accept="image/*">
+        <input type="submit" value="Upload">
+    </form>
+    <% if (message) { %>
+        <p><%= message %></p>
+    <% } %>
+</body>
+</html>

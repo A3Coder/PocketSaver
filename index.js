@@ -3,8 +3,6 @@ const cors = require("cors")
 const env = require("dotenv")
 
 env.config()
-
-console.log(process.env)
 mongoose.connect(process.env.MONGOURL);
 
 //For Api Route
